@@ -1,21 +1,60 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz App</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="./script.js"></script>
+    <script src="./database.js"></script>
+    <script src="./template.js"></script>
 
     <!-- bootstrap files -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body onload="init()">
     <nav class="navbar bg-body-tertiary">
-  <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1">QuizApp</span>
-  </div>
-</nav>
-</body>
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">QuizApp</span>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="card quiz_card">
+        <img src="./img/question-mark.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 id="show_question" class="card-title">Frage</h5>
+          <div class="card mb-2 quiz_answer_card" onclick="markAnswer(1)">
+            <div id="answer_1" class="card-body">Antwort 1</div>
+          </div>
+          <div class="card mb-2 quiz_answer_card" onclick="markAnswer(2)">
+            <div id="answer_2" class="card-body">Antwort 2</div>
+          </div>
+          <div class="card mb-2 quiz_answer_card" onclick="markAnswer(3)">
+            <div id="answer_3" class="card-body">Antwort 3</div>
+          </div>
+          <div class="card mb-2 quiz_answer_card"onclick="markAnswer(4)">
+            <div id="answer_4" class="card-body">Antwort 4</div>
+          </div>
+          <div class="question_footer">
+            <span>
+              <b>1</b> von <b id= "nummber_all_questions"></b> Fragen
+            </span>
+            <button type="button" class="btn btn-primary btn-sm">Nächste Frage</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
