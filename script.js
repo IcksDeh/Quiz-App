@@ -1,4 +1,7 @@
 let currentQuestion = 0; 
+let rightQuestions = 0; 
+
+
 
 
 function init(){
@@ -9,19 +12,24 @@ function init(){
 
 function showNumberAllQuestions(){
     let numberAllQuestions = document.getElementById('nummber_all_questions');
+    let numberAllQuestionsEndscreen = document.getElementById('number_questions_endscreen');
     numberAllQuestions.innerHTML = questions.length;
+    numberAllQuestionsEndscreen.innerHTML = questions.length;
 }
 
 function showQuestion(){
     if(currentQuestion >= questions.length){
-        let endOfQuiz = document.getElementById('show_end_of_quiz');
-        endOfQuiz.classList.remove("d_none");
-        let displayQuestionContent = document.getElementById('display_question_content');
-        displayQuestionContent.classList.add("d_none");
+        document.getElementById('show_end_of_quiz').classList.remove("d_none");
+        document.getElementById('display_question_content').classList.add("d_none");
+        document.getElementById('amount_of_right_questions').innerHTML = rightQuestions;
+
 
     } else{
+       let percent = currentQuestion / questions.length; 
        let question = questions[currentQuestion].question;
        let showQuestion = document.getElementById('show_question');
+
+       percent = percent * 100;
        showQuestion.innerHTML = question;
        showAnswers();
        showNumberCurrentQuestion();
@@ -46,6 +54,7 @@ function markAnswer(selection){
     let rightAnswer = document.getElementById('answer_'+ questions[currentQuestion].right_answer);
     if(selection == questions[currentQuestion].right_answer){
         markChosenAnswer.parentNode.classList.add('bg-success');
+        rightQuestions++
     }
     else {
         markChosenAnswer.parentNode.classList.add('bg-danger');
@@ -58,7 +67,6 @@ function markAnswer(selection){
 function nextQuestion(){
     currentQuestion += 1;
     showQuestion();
-    
     let nextButton = document.getElementById('next_button');
     nextButton.disabled = true;
 

@@ -25,11 +25,11 @@ body{
 }
 
 .bg-success{
-    color: white;
+    color: white !important;
 }
 
 .bg-danger{
-    color: white;
+    color: white !important;
 }
 
 .d_none{

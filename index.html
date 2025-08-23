@@ -30,8 +30,14 @@
     </nav>
 
     <div class="container">
+      
       <div class="card quiz_card">
-        <img src="./img/question-mark.jpg" class="card-img-top" alt="..." />
+        <img src="./img/question-mark.jpg" id="img_card" class="card-img-top" alt="..." />
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            25%
+          </div>
+        </div>
         <div id="show_end_of_quiz" class="card-body d_none">
           <div>
             <p>Das Quiz ist beendet!</p>
@@ -40,7 +46,7 @@
             <img class="img_trophy" src="./img/trophy.png" alt="Trophäe">
           </div>
           <div>
-            <p>Hast <span>X</span> Fragen von <span>Y</span> richtig beantwortet.</p>
+            <p>Du hast <b id="amount_of_right_questions">X</b> Fragen von <b id="number_questions_endscreen"></b> richtig beantwortet.</p>
           </div>
         </div>
         
