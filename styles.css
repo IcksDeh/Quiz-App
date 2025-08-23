@@ -31,3 +31,20 @@ body{
 .bg-danger{
     color: white;
 }
+
+.d_none{
+    display: none;
+}
+
+.img_trophy{
+    height: 200px;
+    width: auto;
+    margin-bottom: 30px;
+}
+
+#show_end_of_quiz{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

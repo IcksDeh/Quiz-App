@@ -32,7 +32,19 @@
     <div class="container">
       <div class="card quiz_card">
         <img src="./img/question-mark.jpg" class="card-img-top" alt="..." />
-        <div class="card-body">
+        <div id="show_end_of_quiz" class="card-body d_none">
+          <div>
+            <p>Das Quiz ist beendet!</p>
+          </div>
+          <div>
+            <img class="img_trophy" src="./img/trophy.png" alt="Trophäe">
+          </div>
+          <div>
+            <p>Hast <span>X</span> Fragen von <span>Y</span> richtig beantwortet.</p>
+          </div>
+        </div>
+        
+        <div id="display_question_content" class="card-body">
           <h5 id="show_question" class="card-title">Frage</h5>
           <div class="card mb-2 quiz_answer_card" onclick="markAnswer(1)">
             <div id="answer_1" class="card-body">Antwort 1</div>

@@ -13,12 +13,20 @@ function showNumberAllQuestions(){
 }
 
 function showQuestion(){
-    let question = questions[currentQuestion].question;
-    let showQuestion = document.getElementById('show_question');
-    showQuestion.innerHTML = question;
+    if(currentQuestion >= questions.length){
+        let endOfQuiz = document.getElementById('show_end_of_quiz');
+        endOfQuiz.classList.remove("d_none");
+        let displayQuestionContent = document.getElementById('display_question_content');
+        displayQuestionContent.classList.add("d_none");
 
-    showAnswers();
-    showNumberCurrentQuestion();
+    } else{
+       let question = questions[currentQuestion].question;
+       let showQuestion = document.getElementById('show_question');
+       showQuestion.innerHTML = question;
+       showAnswers();
+       showNumberCurrentQuestion();
+    }
+    
 }
 
 function showAnswers(){
